@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  navtech_docker:
+    build:
+      context: .
+      dockerfile: Dockerfile.ros2
+      target: dev
+      args:
+        - AMENT_WORKSPACE_DIR=${AMENT_WORKSPACE_DIR}
+        - USERNAME=${USERNAME:-developer}
+        - UID=${UID}
+        - GID=${GID}
+    environment:
+     - DISPLAY=${DISPLAY}
+     - QT_X11_NO_MITSHM=1
+    network_mode: "host"
+    privileged: true
+    tty: true
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - /tmp/.docker.xauth:/tmp/.docker.xauth:rw
+      - ../src:${AMENT_WORKSPACE_DIR}/src

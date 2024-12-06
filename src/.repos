@@ -1,0 +1,5 @@
+repositories:
+  iasdk-public:
+    type: git
+    url: https://bitbucket.org/navtechradar/iasdk-public
+    version: master

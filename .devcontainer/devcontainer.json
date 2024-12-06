@@ -1,0 +1,19 @@
+{
+  "name": "Navtech ROS Docker",
+  "dockerComposeFile": [
+    "../docker/docker-compose.yml"
+  ],
+  "service": "navtech_docker",
+  "workspaceFolder": "/ament_ws",
+  "shutdownAction": "stopCompose",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-iot.vscode-ros",
+        "ms-python.python",
+        "ms-vscode.cmake-tools",
+        "ms-vscode.cpptools"
+      ]
+    }
+  }
+}
